@@ -42,3 +42,27 @@ attributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: 24), range
 attributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: 32), range: NSRange(location: 10, length: 4))
 attributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: 40), range: NSRange(location: 15, length: 6))
 
+
+
+
+
+extension String {
+
+    var isNumeric: Bool {
+        return Double(self) != nil
+    }
+
+    var lines: String {
+        self.components(separatedBy: .whitespacesAndNewlines).joined(separator: "\n")
+    }
+    func withPrefix(_ prefix: String) -> String {
+        return self.hasPrefix(prefix) ? self : prefix + self
+    }
+    
+}
+
+"drop".withPrefix("rain")
+
+"5".isNumeric
+
+print("i want to code".lines)
